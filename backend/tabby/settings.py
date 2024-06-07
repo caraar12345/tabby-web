@@ -140,6 +140,7 @@ AUTHENTICATION_BACKENDS = (
     "social_core.backends.azuread.AzureADOAuth2",
     "social_core.backends.microsoft.MicrosoftOAuth2",
     "social_core.backends.google.GoogleOAuth2",
+    "social_core.backends.oidc.OpenIdConnectAuth",
     "django.contrib.auth.backends.ModelBackend",
 )
 
@@ -180,6 +181,9 @@ for key in [
     "SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET",
     "SOCIAL_AUTH_MICROSOFT_GRAPH_KEY",
     "SOCIAL_AUTH_MICROSOFT_GRAPH_SECRET",
+    "SOCIAL_AUTH_OIDC_OIDC_ENDPOINT",
+    "SOCIAL_AUTH_OIDC_KEY",
+    "SOCIAL_AUTH_OIDC_SECRET",
     "CONNECTION_GATEWAY_AUTH_CA",
     "CONNECTION_GATEWAY_AUTH_CERTIFICATE",
     "CONNECTION_GATEWAY_AUTH_KEY",
@@ -255,4 +259,4 @@ if FRONTEND_URL:
     if FRONTEND_URL.startswith("https://"):
         CSRF_COOKIE_SECURE = True
 else:
-    LOGIN_REDIRECT_URL = '/'
+    LOGIN_REDIRECT_URL = "/"
